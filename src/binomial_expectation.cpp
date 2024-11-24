@@ -77,7 +77,7 @@ void expected_returns(double S0,
     double u = std::exp(volatility * std::sqrt(delta_t));
     double d = 1.0 / u;
 
-    // populate the output arrays
+    // Populate the output arrays
     for (size_t i = 0; i<spread_points; ++i){
         out_spread[i] = d + (u-d) * (double)i / ((double) spread_points-1.0);
         out_risk_neutral_rate[i] = std::log(out_spread[i])/delta_t;
